@@ -20,6 +20,10 @@ def parentSelection(parent, bestCost, worstCost, option=1):
             sumOfFitness += parent[i].fitness
 
     # 순위 기반 선택으로 변형된 적합도
+    if option == 2:
+        for i in range(Cities.NUM_OF_PARENTS):
+            parent[i].fitness = Preset.getFitness_2(bestCost, worstCost, parent[i].cost, 4, 1)
+            sumOfFitness += parent[i].fitness
     # 이 부분은 잠시 보류. 내가 잘못 이해하는 것일수도 있다
 
     # 자식수*2 만큼의 부모를 선출
