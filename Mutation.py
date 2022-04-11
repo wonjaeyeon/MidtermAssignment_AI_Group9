@@ -7,7 +7,7 @@ import Cities
 def simpleMutation(offsprings, cityCounts):
     # 인접한 두 노드의 값 변환
     for current in range(0, Cities.NUM_OF_OFFSPRINGS):
-        pointIndex = random.random(0, cityCounts - 1)
+        pointIndex = random.randint(0, cityCounts - 1)
         # 쉬운 연산자 있는 거 아는데, 너무 끔찍하게 길다
         tmpVal = offsprings[current].nodesInPath[pointIndex]
         offsprings[current].nodesInPath[pointIndex] = offsprings[current].nodesInPath[pointIndex + 1]

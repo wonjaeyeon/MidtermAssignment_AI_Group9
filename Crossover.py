@@ -83,7 +83,7 @@ def orderCrossover(offsprings, parents, cityCount):
         p2 = offsprings[current].p2Index
 
         # 랜덤한 정수 값을 리턴 (반드시 cut_index1 < cut_index2)
-        cut_index1 = random.random(0, cityCount - 1)  # 0에서 N-2 사이에 리턴된다
+        cut_index1 = random.randint(0, cityCount - 1)  # 0에서 N-2 사이에 리턴된다
         cut_index2 = random.randint(cut_index1 + 1, cityCount)
 
         # 자름선 사이의 값을 그대로 적용 (cut_index1 + 1 ~ cut_index2)
@@ -92,6 +92,10 @@ def orderCrossover(offsprings, parents, cityCount):
 
         # offsping은 0 인덱스부터, p2는 cut_index2 + 1부터 적용
         p2_insertIndex = cut_index2 + 1
+
+        # 추가한 코드 p2_repaceIndex에 대해 추가 -> 따로 값이 없어서
+        p2_replaceIndex = cut_index1 + 1
+
         for insertIndex in range(0, cityCount):
             # 자름선 내 값에 대해서는 작업하지 않는다
             if insertIndex == cut_index1 + 1:
@@ -139,7 +143,7 @@ def PMX(offsprings, parents, cityCount):
         p2 = offsprings[current].p2Index
 
         # 랜덤한 정수 값을 리턴 (반드시 cut_index1 < cut_index2)
-        cut_index1 = random.random(0, cityCount - 1)  # 0에서 N-2 사이에 리턴된다
+        cut_index1 = random.randint(0, cityCount - 1)  # 0에서 N-2 사이에 리턴된다
         cut_index2 = random.randint(cut_index1 + 1, cityCount)
 
         # 자름선 사이의 값을 그대로 적용 (cut_index1 +1 ~ cut_index2)
