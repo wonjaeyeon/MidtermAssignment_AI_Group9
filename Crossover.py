@@ -181,7 +181,7 @@ def assemblyCrossover(offsprings, parents, cityCounts):
     reference = 0  # 접근하는 이웃 테이블 상 인덱스
 
     for i in range(0, cityCounts):
-        table.append(Neighbor())
+        table.append(Cities.Neighbor())
 
     # current 만큼 이웃 테이블을 제작, 사용한다
     for current in range(0, Cities.NUM_OF_OFFSPRING):

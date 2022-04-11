@@ -26,7 +26,7 @@ def parentSelection(parent, bestCost, worstCost, option=1):
     for i in range(Cities.NUM_OF_OFFSPINGS * 2):
         # 부모 1번의 인덱스
         point = random.random(0, sumOfFitness)
-        sum = 0;
+        sum = 0
 
         # 모든 부모에 대해 fitness 값을 더해가며 바늘의 위치는 찾음
         for j in range(Cities.NUM_OF_PARENTS):
