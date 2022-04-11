@@ -30,17 +30,6 @@ def getFirstParents(parents, nodesList):
 	# return
 	# best 및 worst 코스트에 대해서는 함수 외부에서 인덱스 참조로 바로 구할 수 있다
 
-# 하나의 parent에 대해 cost를 구하는 함수
-# bestCost, worstCost는 이 함수 밖에서 리턴 값으로 판단 및 저장
-# parent 내 nodesInPath 리스트만 path로 넘긴다
-def getCost(path):
-	totalCost = 0
-	# 여기 카운트는 멤버 변수값이 아니라 list 자체 제공값
-	for i in range(path.nodeInPath.count-1):	# N-1에서 0으로 가는 경로는 제외
-		totalCost += distance(path[i], path[i+1])	# 두 경로 사이의 값을 리턴
-	return totalCost
-
-
 # select 단계에서 쓰이는 fitness 값을 구하는 함수
 # 품질 비례 룰렛 휠에서 쓰이는 방식이다
 # 마찬가지로 sumOfFitness는 이 함수 밖에서 계산한다
@@ -51,6 +40,16 @@ def getFitness_1(best, worst, current, k=4):
 # iteration은 함수 외부의 for문에서 받고, min, max는 사용자 지정 값이다
 def getFitness_2(min, max, iteration):
 	return max + (iteration - 1) * (min - max) / (Cities.NUM_OF_PARENTS - 1)
+
+# 하나의 parent에 대해 cost를 구하는 함수
+# bestCost, worstCost는 이 함수 밖에서 리턴 값으로 판단 및 저장
+# parent 내 nodesInPath 리스트만 path로 넘긴다
+def getCost(path):
+	totalCost = 0
+	# 여기 카운트는 멤버 변수값이 아니라 list 자체 제공값
+	for i in range(path.nodeInPath.count-1):	# N-1에서 0으로 가는 경로는 제외
+		totalCost += distance(path[i], path[i+1])	# 두 경로 사이의 값을 리턴
+	return totalCost
 
 # import math해야 함
 def distance(index1, index2):
