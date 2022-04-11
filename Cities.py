@@ -26,7 +26,7 @@ class GAparent:
 # 단순히 nodes에 append하는 건 굳이 함수를 써야 할까
 # parents[45].nodes.append(581)
 
-class GAoffsping:
+class GAoffspring:
     nodesInPath = []  # int형 인덱스 방식으로 path 데이터 순서를 저장하는 list
     cost = 0  # 해당 경로의 cost (복귀 비용 제외)
     # fitness 값을 쓰이지 않습니다
