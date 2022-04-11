@@ -1,6 +1,7 @@
 # <Selection 단계>
 import Cities
 import random
+import Preset
 # 사용할 부모 쌍 인덱스를 리턴
 # offspring의 p1Index, p2Index에 할당하는 건 해당 함수 외부에서 처리
 
@@ -15,7 +16,7 @@ def parentSelection(parent, bestCost, worstCost, option=1):
     # 품질 비례 룰렛 휠에 사용되는 적합도
     if option == 1:
         for i in range(Cities.NUM_OF_PARENTS):
-            parent[i].fitness = getFitness_1(bestCost, worstCost, parent[i].cost, 4, 1)
+            parent[i].fitness = Preset.getFitness_1(bestCost, worstCost, parent[i].cost, 4, 1)
             sumOfFitness += parent[i].fitness
 
     # 순위 기반 선택으로 변형된 적합도

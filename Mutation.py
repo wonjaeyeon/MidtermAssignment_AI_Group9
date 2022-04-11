@@ -79,7 +79,7 @@ def rankShift(rankList, rankToShift, offspringToShift):
 # (2) 각 offspring이 자신의 부모보다 우월한 경우 그 부모와 대치
 # 각 parent가 상위 단계에서 경로 크기 순서로 정렬된 상태라 가정한다
 # 또한 각 offspring은 본인의 cost 값을 구해왔다고 가정한다
-def invserseWithParents(offsprings):
+def invserseWithParents(offsprings,current, parent):
     # 변동된 순위 정보를 기록하는 int형 리스트
     # -1은 기존의 부모 데이터가 사용됨을, 그 이상의 정수 값은 새로운 자식 데이터의 인덱스를 의미
     rankList = [-1 for i in range(Cities.NUM_OF_PARENTS)]
@@ -102,7 +102,7 @@ def invserseWithParents(offsprings):
 
         # 원칙1: 최대한 많은 offspring을 살려서 간다
         # 원칙2: 두 부모 둘 다 대치할 수 있는 경우, 저열해를 대치하는 것이 우선이다
-        // 여기는
-        나중에..,
+        #// 여기는
+        #나중에..,
 
 # 이렇게 산출된 rankList에 따라 실제 parents 집합의 값을 바꾼다

@@ -59,9 +59,9 @@ def cycleCrossover(offsprings, parents, cityCount):
                 unReceived = unReceived + 1
 
         # 해당 할당되지 않은 위치가 다음 작업 지점
-        insertIndex = unReceived;
+        insertIndex = unReceived
         # 플래그 반전
-        searchP1 = !searchP1
+        searchP1 = not(searchP1)
 
         # 해당 offspring의 모든 값이 할당된 상태라면 종료
         if insertIndex > cityCount:
