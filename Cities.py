@@ -20,7 +20,6 @@ class CityInRange:
 
 class GAparent:
     nodesInPath = []  # int형 인덱스 방식으로 path 데이터 순서를 저장하는 list
-    path=[]
     cost = 0  # 해당 경로의 cost (복귀 비용 제외)
     fitness = 0  # selection 단계에서 구함
 
@@ -29,7 +28,6 @@ class GAparent:
 
 class GAoffspring:
     nodesInPath = []  # int형 인덱스 방식으로 path 데이터 순서를 저장하는 list
-    path = []
     cost = 0  # 해당 경로의 cost (복귀 비용 제외)
     # fitness 값을 쓰이지 않습니다
     p1Index, p2Index = 0  # 자신을 구성하는 두 부모의 인덱스
